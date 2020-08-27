@@ -1,0 +1,776 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 10px;
+	font-family: "Roboto Cn", sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: #eee;
+}
+
+header{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)), url("c3.jpg") center no-repeat;
+	background-size: cover;
+	position: relative;
+  overflow: hidden;
+}
+
+.container{
+	max-width: 120rem;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.menu-toggle{
+	position: fixed;
+	top: 2.5rem;
+	right: 2.5rem;
+	color: #eeeeee;
+	font-size: 3rem;
+	cursor: pointer;
+	z-index: 1000;
+	display: none;
+}
+
+nav{
+	padding-top: 5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	z-index: 999;
+	overflow: hidden;
+	position: fixed;
+	width: 90%;
+	background-color: rgba(0,0,0,.2);
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.brand{
+	font-size: 3rem;
+	font-weight: 300;
+	transform: translateX(-100rem);
+	animation: slideIn .5s forwards;
+}
+
+.brand span{
+	color: #EB2188;
+}
+
+nav ul{
+	display: flex;
+}
+
+nav ul li{
+	list-style: none;
+	transform: translateX(100rem);
+	animation: slideIn .5s forwards;
+}
+
+nav ul li:nth-child(1){
+	animation-delay: 0s;
+}
+
+nav ul li:nth-child(2){
+	animation-delay: .5s;
+}
+
+nav ul li:nth-child(3){
+	animation-delay: 1s;
+}
+
+nav ul li:nth-child(4){
+	animation-delay: 1.5s;
+}
+
+nav ul li a{
+	padding: 1rem 0;
+	margin: 0 3rem;
+	position: relative;
+	letter-spacing: 2px;
+}
+
+nav ul li a:last-child{
+	margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #EB2188;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+
+nav ul li a::before{
+	top: 0;
+	transform-origin: left;
+}
+
+nav ul li a::after{
+	bottom: 0;
+	transform-origin: right;
+}
+
+.overlay{
+	background-color: rgba(0,0,0,.95);
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: opacity 650ms;
+	transform: scale(0);
+	opacity: 0;
+  display: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+	transform: scaleX(1);
+}
+
+@keyframes slideIn {
+	from{
+
+	}
+	to{
+		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 700px){
+
+	.menu-toggle{
+		display: block;
+	}
+
+	nav{
+		padding-top: 0;
+		display: none;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100vh;
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+
+	nav ul li{
+		margin-top: 1rem;
+	}
+
+	nav ul li a{
+		margin: 0;
+		font-size: 2.5rem;
+	}
+
+	.brand{
+		font-size: 5rem;
+	}
+  
+  .overlay.menu-open,
+  nav.menu-open{
+	  display: flex;
+	  transform: scale(1);
+	  opacity: 1;
+  }
+  
+}
+.parallax.p1 {
+  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-70374.jpg) no-repeat fixed 50% 0;
+  background-size: cover;
+  color: #EB2188;
+}
+
+
+.parallax-text {
+  color:black;
+  width: 30em;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  border: .5em solid #EB2188;
+  margin-left: -10%;
+  padding: 2em 0;
+  text-align: center;
+  z-index: -1;
+}
+.parallax > div.blur-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} 
+hgroup{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #fff;
+  border: 5px solid #fff;
+  padding: .5em 3em;
+  background-color: rgba(0,0,0,.2);
+  font-size: 16px;
+  z-index:2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .column {
+    width: 100%;
+  }
+  hgroup
+  {
+	  font-size:11px;
+  }
+}
+
+.column h2
+{
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Yatra One', cursive;
+  padding-bottom: 20px;
+  color:#EB2188;
+}
+
+.column p{
+  font-size: 15px;
+  font-family: 'Karla', sans-serif;
+  padding-left: 10px;
+  padding-right:10px;
+  color:#888888;
+}
+
+.row1{
+	text-align: center;
+	align-items: center;
+	padding-bottom:5%;
+}
+
+.row1 h1{
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.button {
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	align-items:center;
+  }
+  
+  .button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	align-items:center;
+  }
+  
+  .button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+  }
+  
+  .button:hover span {
+	padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
+  @media screen and (max-width: 700px){
+
+	.row1 h1{
+
+		font-size: 20px;
+
+	}
+	.brand{
+		font-size: 3rem;
+	}
+	nav{
+		font-size: 1rem;
+
+	}
+}
+
+  input[type=text], select, textarea{
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	resize: vertical;
+  }
+  input[type=datetime-local], select, textarea{
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	resize: vertical;
+  }
+  
+  /* Style the label to display next to the inputs */
+  label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+  }
+  
+  /* Style the container */
+  .container1 {
+	border-radius: 5px;
+	background-color: #f4511e;
+	padding: 20px;
+	font-size: 20px;
+  font-family: 'Karla', sans-serif;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 8%;
+  color: white;
+  padding-bottom: 5%;
+  }
+  
+  /* Floating column for labels: 25% width */
+  .col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row5:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+	.col-25, .col-75, input[type=submit] {
+	  width: 100%;
+	  margin-top: 0;
+	}
+	.container1{
+		margin-bottom: 16%;
+	}
+  }
+  
+
+
+  footer{
+	padding: 90px 0;
+	font-size: 15px;
+  font-family: 'Karla', sans-serif;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  }
+  
+  .footer-container{
+	max-width: 1300px;
+	margin: auto;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+	padding-right: 12%;
+	padding-left: 12%;
+  }
+  
+  .logo{
+	width: 180px;
+  }
+  
+  .social-media{
+	margin: 20px 0;
+  }
+  
+  .social-media a{
+	color:white;
+	margin-right: 25px;
+	font-size: 22px;
+	text-decoration: none;
+	transition: .3s linear;
+  }
+  
+  .social-media a:hover{
+	color: #EB2188;
+  }
+  
+  .right-col h1{
+	font-size: 26px;
+	padding-bottom:3% ;
+	text-align: center;
+  }
+
+  .right-col p{
+	  padding-bottom: 3%;
+	  text-align: center;
+  }
+  
+  .border{
+	width: 100px;
+	height: 4px;
+	background: #fc5c65;
+  }
+  
+  .newsletter-form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+  }
+  
+  .txtb{
+	flex: 1;
+	padding: 18px 40px;
+	font-size: 16px;
+	color: #293043;
+	border: none;
+	font-weight: 700;
+	outline: none;
+	border-radius: 30px;
+	min-width: 260px;
+  }
+  
+  .btn{
+	padding: 18px 40px;
+	font-size: 16px;
+	color: #f1f1f1;
+	background: #fc5c65;
+	border: none;
+	font-weight: 700;
+	outline: none;
+	border-radius: 30px;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: opacity .3s linear;
+  }
+  
+  .btn:hover{
+	opacity: .7;
+  }
+  
+  .page-content{
+	min-height: 100vh;
+	font-size: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  @media screen and (max-width:960px) {
+	.footer-container{
+	  max-width: 600px;
+	}
+	.right-col{
+	  width: 100%;
+	  margin-bottom: 60px;
+	}
+  
+	.left-col{
+	  width: 100%;
+	  text-align: center;
+	}
+  }
+  
+  
+  @media screen and (max-width:700px){
+	.btn{
+	  margin: 0;
+	  width: 100%;
+	  margin-top: 20px;
+	  }
+	  .txtb{
+		  margin-bottom: 5%;
+	  }
+  }
+
+
+
+  .u1 {
+	font-size: 0;
+	list-style: none;
+	width: 100%;
+	padding-left: 0px;
+  }
+  .u1 li {
+	/*background: #A9A9A9;*/
+	display: inline-block;
+	width: 33.3%;
+  }
+  .u1 li:hover {
+	background: #cdc8c8;
+  }
+  .u1 li img {
+	width: 100%;
+  }
+  .u1 li.feature {
+	/*background: #708090;*/
+	float: left;
+	width: 33.3%;
+  }
+  .u1 li.feature:hover {
+	background: #95a4b2;
+  }
+  .u1 li.two {
+	background: #2F4F4F;
+  }
+  .u1 li.two:hover {
+	background: #668989;
+  }
+  @media (max-width: 640px) {
+	.u1 li {
+	  width: 100%;
+	}
+  
+	.u1 li.feature {
+	  width: 100%;
+	}
+  }
+
+  .aboutus
+  {
+	font-size: 15px;
+	font-family: 'Karla', sans-serif;
+	padding-left: 15%;
+	padding-right:15%;
+	color:#888888;
+	text-align: center;
+	padding-bottom: 5%;
+  }
+
+  .logo{
+	display: block;
+	  text-align: center;
+	  width: auto;
+	  padding-top: 0;
+  }
+
+
+  .column9 {
+    width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column9 .card {
+    position: relative;
+    border-radius: 10px;
+}
+
+.column9 .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#EB2188;
+    transition: 0.7s;
+    z-index: 9999;
+}
+
+.column9 .card:nth-child(1) .icon {
+	background: #0e9aa7;
+}
+.column9 .card .icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+#i1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.column9 .card .face {
+    width: 200px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.column9 .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.column9 .card:hover .face.face1{
+    transform: translateY(0px);
+}
+
+ 
+.column9 .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-100px);
+}
+
+.column9 .card:hover .face.face2{
+	transform: translateY(0);
+	cursor: pointer;
+}
+
+.column9 .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.column9 .card .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    color: #414141;
+} 
+
+
+.column9 {
+	float: left;
+	width: 33.33%;
+	
+  }
+  
+  /* Clear floats after the columns */
+  .row111:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+	.column9 {
+	  width: 100%;
+	}
+	.column9{
+		align-items: center ;
+		text-align: center;
+		padding-left: 10%;
+	}
+	.card{
+	  align-items: center ;
+	  text-align: center;
+	  padding-left: 10%;
+  }
+  .face{
+	  align-items: center ;
+	  text-align: center;
+	  padding-left: 10%;
+  }
+  
+  
+  }
+  
+  .column9{
+	  align-items: center ;
+	  text-align: center;
+	  padding-left: 7%;
+  }
+  .card{
+	align-items: center ;
+	text-align: center;
+	padding-left: 7%;
+}
+.face{
+	align-items: center ;
+	text-align: center;
+	padding-left: 7%;
+}
+
